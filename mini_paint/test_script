@@ -1,0 +1,15 @@
+#!/bin/bash
+gcc -Wall -Wextra -Werror our_mini_paint.c -lm -o our
+gcc -Wall -Wextra -Werror mini_paint.c -lm -o mini_paint
+echo "-----test1-----"
+./our ./examples/1 > our_out.txt
+./mini_paint ./examples/1 > mini_paint_out.txt
+diff -s our_out.txt mini_paint_out.txt
+echo "-----test2-----"
+./our ./examples/2 > our_out.txt
+./mini_paint ./examples/2 > mini_paint_out.txt
+diff -s our_out.txt mini_paint_out.txt
+echo "-----test-----"
+./our test > our_out.txt
+./mini_paint test > mini_paint_out.txt
+diff -s our_out.txt mini_paint_out.txt

@@ -1,0 +1,23 @@
+#!/bin/bash
+gcc -Wall -Wextra -Werror our_micro_paint.c -o our
+gcc -Wall -Wextra -Werror micro_paint.c -o micro_paint
+echo "-----test0-----"
+./our ./examples/0 > our_out.txt
+./micro_paint ./examples/0 > micro_paint_out.txt
+diff -s our_out.txt micro_paint_out.txt
+echo "-----test1-----"
+./our ./examples/1 > our_out.txt
+./micro_paint ./examples/1 > micro_paint_out.txt
+diff -s our_out.txt micro_paint_out.txt
+echo "-----test2-----"
+./our ./examples/2 > our_out.txt
+./micro_paint ./examples/2 > micro_paint_out.txt
+diff -s our_out.txt micro_paint_out.txt
+echo "-----test3-----"
+./our ./examples/3 > our_out.txt
+./micro_paint ./examples/3 > micro_paint_out.txt
+diff -s our_out.txt micro_paint_out.txt
+echo "-----test9-----"
+./our test > our_out.txt
+./micro_paint test > micro_paint_out.txt
+diff -s our_out.txt micro_paint_out.txt
